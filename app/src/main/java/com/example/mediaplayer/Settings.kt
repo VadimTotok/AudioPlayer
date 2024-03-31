@@ -9,12 +9,13 @@ class Settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+        setupUI()
+    }
 
-        val tomain = findViewById<ImageButton>(R.id.ToMain)
-
-        tomain.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
+    private fun setupUI() {
+        val backButton = findViewById<ImageButton>(R.id.ToMain)
+        backButton.setOnClickListener {
+            finish()
         }
     }
 }
